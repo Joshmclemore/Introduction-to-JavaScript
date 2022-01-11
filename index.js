@@ -19,8 +19,10 @@ Do the following:
 
    HINT: no function required
 */
-
-
+const votingAge = 18
+if(votingAge >=18){
+  console.log('true')
+}
 
 /*
 Task 1b - Values
@@ -33,7 +35,12 @@ Do the following:
    HINT: no function required
 */
 
-
+let a = 1
+let b = 2
+if (b === 2) {
+  let a = 10;
+  console.log(a);
+}
 
 
 
@@ -47,7 +54,9 @@ Do the following:
 
    HINT: look up the Number method
 */
-
+let stringToANum = '1999'
+stringToANum = 1999
+console.log(stringToANum);
 
 
 
