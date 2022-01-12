@@ -128,13 +128,13 @@ function hungryDog(weight, age){
   }else if (age >=1 && weight >= 11 && weight <= 15) {
     return weight*0.03
   }else if (age >=1 && weight >= 15) {
-    return weight*0.03
+    return weight*0.02
   }else if (age >=0.166 && age <=0.333) {
     return weight*0.1
-  }else if (age >=0.333 && age <=0.583) {
-    return weight*0.5
+  }else if (age >=0.333 && age < 0.583) {
+    return weight*0.05
   }else if (age >=.583 && age <1) {
-    return weight*0.4
+    return weight*0.04
   }
 }
 console.log(hungryDog(15,1));
@@ -163,29 +163,28 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
-let computer = Math.floor(Math.random()*3);
-let rock = 0;
-let paper = 1;
-let scissors = 2;
+let rPS = ['rock', 'paper', 'scissors']
+let computer = rPS[Math.floor(Math.random()*3)]
+let user = rPS[Math.floor(Math.random()*3)]
 
 function game(user, computer){
   if(user === computer) {
-    console.log("it's a tie")
-  }else if(user = 0 && computer === 1){
-    console.log("you lose!")
-  }else if(user = 0 && computer === 2){
-    console.log("you win!")
-  }else if(user = 1 && computer === 0){
-    console.log("you win!")
-  }else if(user = 1 && computer === 2){
-    console.log("you lose!")
-  }else if(user = 2 && computer === 0){
-    console.log("you lose!")
-  }else if(user = 2 && computer === 1){
-    console.log("you win!")
+    return "it's a tie"
+  }else if(user === 'rock' && computer === 'paper'){
+    return "you lose!"
+  }else if(user === 'rock' && computer === 'scissors'){
+    return "you win!"
+  }else if(user === 'paper' && computer === 'rock'){
+    return "you win!"
+  }else if(user === 'paper' && computer === 'scissors'){
+    return "you lose!"
+  }else if(user === 'scissors' && computer === 'rock'){
+    return "you lose!"
+  }else if(user === 'scissors' && computer === 'paper'){
+    return "you win!"
   }
 }
-console.log(game(paper, computer));
+console.log(game(user, computer));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -231,9 +230,11 @@ Using the annoyingSong function below do the following:
     "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
+
 function annoyingSong(startingPoint){
+  var numberLeftOver = startingPoint - 1
   for (let i = startingPoint; i > 0; i--){
-    return `${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i - i} bottles of soda on the wall`
+    return `${startingPoint} bottles of soda on the wall, ${startingPoint} bottles of soda, take one down pass it around ${numberLeftOver} bottles of soda on the wall`
   }
 }
 
@@ -255,10 +256,21 @@ Using the grade function below do the following:
  below should return 'you got an F'
 */
 
-function grade(/*Your Code here */){
-/*Your Code here */
-}
+function grade(number){
+ if(number >= 90 && number <=100){
+   return "you got an A"
+ }else if(number >= 80 && number <= 89){
+   return "you got a B"
+ }else if(number >= 70 && number <= 79){
+   return "you got a C"
+ }else if(number >= 60 && number <= 69){
+   return "you got a D"
+ }else if(number < 60){
+   return "you got an F"
+ }
+ }
 
+console.log(grade(71));
 
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
